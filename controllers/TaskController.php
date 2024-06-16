@@ -14,17 +14,23 @@ class TaskController {
     }
 
     public function addTask($task) {
-        $this->model->addTask($task);
+        if (!empty($task)) {
+            $this->model->addTask($task);
+        }
         header('Location: index.php');
     }
 
     public function markTaskCompleted($taskId) {
-        $this->model->markTaskAsCompleted($taskId);
+        if (!empty($taskId)) {
+            $this->model->markTaskAsCompleted($taskId);
+        }
         header('Location: index.php');
     }
 
     public function deleteTask($taskId) {
-        $this->model->deleteTask($taskId);
+        if (!empty($taskId)) {
+            $this->model->deleteTask($taskId);
+        }
         header('Location: index.php');
     }
 }
