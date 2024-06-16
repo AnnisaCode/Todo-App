@@ -18,5 +18,10 @@ class TaskModel {
         $stmt = $this->pdo->prepare('INSERT INTO tasks (task, completed) VALUES (:task, 0)');
         $stmt->execute(['task' => $task]);
     }
+
+    public function markTaskAsCompleted($taskId) {
+        $stmt = $this->pdo->prepare('UPDATE tasks SET completed = 1 WHERE id = :id');
+        $stmt->execute(['id' => $taskId]);
+    }
 }
 ?>

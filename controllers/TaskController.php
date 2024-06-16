@@ -17,5 +17,10 @@ class TaskController {
         $this->model->addTask($task);
         header('Location: index.php');
     }
+
+    public function markTaskCompleted($taskId) {
+        $this->model->markTaskAsCompleted($taskId);
+        header('Location: index.php');
+    }
 }
 ?>
