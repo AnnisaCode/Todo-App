@@ -23,6 +23,12 @@ switch ($action) {
             $controller->markTaskCompleted($taskId);
         }
         break;
+    case 'delete_task':
+        $taskId = isset($_GET['id']) ? $_GET['id'] : null;
+        if ($taskId) {
+            $controller->deleteTask($taskId);
+        }
+        break;
     default:
         // Jika action tidak dikenali, redirect ke halaman utama
         header('Location: index.php');

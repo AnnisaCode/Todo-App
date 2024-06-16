@@ -23,5 +23,10 @@ class TaskModel {
         $stmt = $this->pdo->prepare('UPDATE tasks SET completed = 1 WHERE id = :id');
         $stmt->execute(['id' => $taskId]);
     }
+
+    public function deleteTask($taskId) {
+        $stmt = $this->pdo->prepare('DELETE FROM tasks WHERE id = :id');
+        $stmt->execute(['id' => $taskId]);
+    }
 }
 ?>

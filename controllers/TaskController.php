@@ -22,5 +22,10 @@ class TaskController {
         $this->model->markTaskAsCompleted($taskId);
         header('Location: index.php');
     }
+
+    public function deleteTask($taskId) {
+        $this->model->deleteTask($taskId);
+        header('Location: index.php');
+    }
 }
 ?>
