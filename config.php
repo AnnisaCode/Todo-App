@@ -10,4 +10,3 @@ try {
 } catch (PDOException $e) {
     die("Koneksi ke database gagal: " . $e->getMessage());
 }
-?>
